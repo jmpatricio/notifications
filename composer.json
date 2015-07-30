@@ -3,8 +3,8 @@
     "description": "",
     "authors": [
         {
-            "name": "",
-            "email": ""
+            "name": "Joao Patricio",
+            "email": "jmpatricio@gmail.com"
         }
     ],
     "require": {
@@ -13,7 +13,8 @@
     },
     "autoload": {
         "classmap": [
-            "src/migrations"
+            "src/migrations",
+            "tests"
         ],
         "psr-0": {
             "Jmpatricio\\Notifications\\": "src/"

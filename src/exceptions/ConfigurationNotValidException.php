@@ -18,8 +18,11 @@ namespace Jmpatricio\Notifications\Exceptions;
  * Class NotCreatedException
  * @since
  */
-class NotCreatedException extends \Exception
+class ConfigurationNotValidException extends \Exception
 {
+
+    protected $errors;
+
     /**
      * Construct the exception
      * @link http://php.net/manual/en/exception.construct.php
@@ -29,6 +32,27 @@ class NotCreatedException extends \Exception
      */
     public function __construct($message = "", $code = 0, \Exception $previous = null)
     {
+        $this->errors = [];
         parent::__construct($message, $code, $previous);
+    }
+
+    /**
+     * Set the errors attribute
+     * @param array $errors Array with errors
+     * @since 1.0
+     */
+    public function setErrors($errors)
+    {
+        $this->errors = $errors;
+    }
+
+    /**
+     * Get the errors
+     * @return array Array of errors
+     * @since 1.0
+     */
+    public function getErrors()
+    {
+        return $this->errors;
     }
 }

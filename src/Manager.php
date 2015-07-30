@@ -2,7 +2,7 @@
 /**
  * Manager file
  *
- * @package     Jmpatricio\Notifications
+ * @package     Jmpatricio\notifications
  * @file        Manager.php
  * @createdby   joao
  * @createdon   2015/07/29
@@ -14,6 +14,7 @@
 namespace Jmpatricio\Notifications;
 
 use Jmpatricio\Notifications\Models\Action;
+use Jmpatricio\Notifications\Providers\Configuration;
 use Jmpatricio\Notifications\Providers\Email\EmailProvider;
 use Jmpatricio\Notifications\Repositories\ActionRepository;
 use Jmpatricio\Notifications\Repositories\TriggerRepository;
@@ -92,6 +93,7 @@ class Manager
      * @since 1.0
      */
     protected function executeAction(Action $action, $payload=null){
+        /** @var Configuration $configuration */
         $configuration = $action->configuration;
 
         // Choose the provider based on something

@@ -2,7 +2,7 @@
 /**
  * NotificationProvider file
  *
- * @package     Jmpatricio\Notifications\Contracts
+ * @package     Jmpatricio\notifications\Contracts
  * @file        ProviderInterface.php
  * @createdby   joao
  * @createdon   2015/07/29
@@ -13,6 +13,9 @@
 
 namespace Jmpatricio\Notifications\Contracts;
 
+
+use Jmpatricio\Notifications\Exceptions\ConfigurationNotValidException;
+use Jmpatricio\Notifications\Providers\Configuration;
 
 interface ProviderInterface
 {
@@ -25,25 +28,18 @@ interface ProviderInterface
     public function getName();
 
     /**
-     * Get the configuration skeleton
-     * @return mixed
-     * @since 1.0
-     */
-    public function getConfigurationSkeleton();
-
-    /**
      * Get the current configuration
-     * @return mixed
+     * @return Configuration The configuration
      * @since 1.0
      */
     public function getConfiguration();
 
     /**
      * Set the configuration
-     * @param mixed $configuration
+     * @param Configuration $configuration
      * @since 1.0
      */
-    public function setConfiguration($configuration);
+    public function setConfiguration(Configuration $configuration);
 
     /**
      * Fire the action
@@ -52,5 +48,13 @@ interface ProviderInterface
      * @since 1.0
      */
     public function fire($payLoad);
+
+    /**
+     * Check if the configurtion is valid
+     * @return bool True if is valid
+     * @throws ConfigurationNotValidException If the configuration is not valid
+     * @since 1.0
+     */
+    public function validateConfiguration();
 
 }
