@@ -6,7 +6,7 @@
  * @file        AbstractModel.php
  * @createdby   joao
  * @createdon   2015/07/29
- * @copyright   Copyright (c) UCADEMICS 2015, All rights reserved.
+ *
  * @since
  */
 
