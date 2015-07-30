@@ -6,7 +6,7 @@
  * @file        Configuration.php
  * @createdby   joao
  * @createdon   2015/07/30
- * @copyright   Copyright (c) UCADEMICS 2015, All rights reserved.
+ *
  * @since
  */
 
