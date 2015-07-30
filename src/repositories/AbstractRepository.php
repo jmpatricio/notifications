@@ -2,7 +2,7 @@
 /**
  * Repository file
  *
- * @package     Jmpatricio\Notifications\Repositories
+ * @package     Jmpatricio\notifications\Repositories
  * @file        AbstractRepository.php
  * @createdby   joao
  * @createdon   2015/07/29

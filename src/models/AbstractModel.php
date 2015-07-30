@@ -2,7 +2,7 @@
 /**
  * AbstractModel file
  *
- * @package     Jmpatricio\Notifications\Models
+ * @package     Jmpatricio\notifications\Models
  * @file        AbstractModel.php
  * @createdby   joao
  * @createdon   2015/07/29

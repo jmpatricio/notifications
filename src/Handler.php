@@ -2,7 +2,7 @@
 /**
  * Handler file
  *
- * @package     Jmpatricio\Notifications
+ * @package     Jmpatricio\notifications
  * @file        Handler.php
  * @createdby   joao
  * @createdon   2015/07/29
@@ -13,6 +13,8 @@
 
 namespace Jmpatricio\Notifications;
 use Jmpatricio\Notifications\Contracts\ProviderInterface;
+use Jmpatricio\Notifications\Exceptions\ConfigurationNotValidException;
+use Jmpatricio\Notifications\Providers\Configuration;
 
 
 /**
@@ -24,12 +26,14 @@ class Handler
     /**
      *
      * @param ProviderInterface $provider
-     * @param array $configuration
+     * @param Configuration $configuration
      * @param mixed $payload
+     * @throws ConfigurationNotValidException If the configuration is not valid for the provider
      * @since 1.0
      */
-    public function execute(ProviderInterface $provider, $configuration, $payload){
+    public function execute(ProviderInterface $provider, Configuration $configuration, $payload){
         $provider->setConfiguration($configuration);
+        $provider->validateConfiguration();
         $provider->fire($payload);
         return;
     }

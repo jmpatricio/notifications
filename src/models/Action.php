@@ -2,7 +2,7 @@
 /**
  * Action file
  *
- * @package     Jmpatricio\Notifications\Models
+ * @package     Jmpatricio\notifications\Models
  * @file        Action.php
  * @createdby   Joao Patricio
  * @createdon   2015/07/29
@@ -11,6 +11,7 @@
 
 
 namespace Jmpatricio\Notifications\Models;
+use Jmpatricio\Notifications\Providers\Configuration;
 
 /**
  * Class Action Represents the action to be taken
@@ -31,7 +32,21 @@ class Action extends AbstractModel
         return $this->belongsTo('Jmpatricio\Notifications\Models\Trigger');
     }
 
+    /**
+     * @return Configuration
+     * @since 1.0
+     */
     public function getConfigurationAttribute(){
-        return json_decode($this->attributes['configuration']);
+        return Configuration::createFromJson($this->attributes['configuration']);
+    }
+
+    /**
+     * Set the configuration attribute
+     * @param Configuration $configuration
+     * @since 1.0
+     */
+    public function setConfigurationAttribute(Configuration $configuration)
+    {
+        $this->attributes['configuration'] = $configuration->toJson();
     }
 }

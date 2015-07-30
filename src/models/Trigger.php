@@ -2,7 +2,7 @@
 /**
  * Trigger file
  *
- * @package     Jmpatricio\Notifications\Models
+ * @package     Jmpatricio\notifications\Models
  * @file        Trigger.php
  * @createdby   Joao Patricio
  * @createdon   2015/07/29

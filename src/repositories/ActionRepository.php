@@ -2,7 +2,7 @@
 /**
  * ActionRepository file
  *
- * @package     Jmpatricio\Notifications\Repositories
+ * @package     Jmpatricio\notifications\Repositories
  * @file        ActionRepository.php
  * @createdby   joao
  * @createdon   2015/07/29
@@ -16,6 +16,7 @@ namespace Jmpatricio\Notifications\Repositories;
 use Jmpatricio\Notifications\Exceptions\NotCreatedException;
 use Jmpatricio\Notifications\Models\Action;
 use Jmpatricio\Notifications\Models\Trigger;
+use Jmpatricio\Notifications\Providers\Configuration;
 
 
 /**
@@ -26,13 +27,13 @@ class ActionRepository extends AbstractRepository
 {
 
 
-    public function add(Trigger $trigger, $type, $configuration = [])
+    public function add(Trigger $trigger, $type, Configuration $configuration)
     {
         try {
             return Action::create([
                 'trigger_id' => $trigger->id,
                 'type' => $type,
-                'configuration' => json_encode($configuration)
+                'configuration' => $configuration
             ]);
         } catch (\Exception $e){
             throw new NotCreatedException('Action not created', 0, $e);
