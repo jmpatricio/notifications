@@ -40,7 +40,9 @@ Now we have the desired configuration. Let's create the action for this trigger
 	$notificationsManager->getActionRepository()->add($trigger, 'email', $configuration);
 	
 	
-At this point we already have the action configured to run every time the trigger `user.newRegistration` is fired. Eg:
+At this point we already have the action configured to run every time the trigger `user.newRegistration` is fired. 
+
+This is an example to fire the trigger:
 
 	// Payload will be the new user object This is only an example
 	$payload = new stdClass();
