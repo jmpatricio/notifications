@@ -8,7 +8,7 @@ This package provides an abstract layer to manage notifications (eg. email notif
 
 1. Run `composer require jmpatricio/notifications`
 
-2. Add `Jmpatricio\Notifications\NotificationsServiceProvider` to your service providers 
+2. Add `Jmpatricio\Notifications\NotificationsServiceProvider` to your service providers in `config/app.php`
 
 3. Instalation Done.
 
